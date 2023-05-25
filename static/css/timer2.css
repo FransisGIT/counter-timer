@@ -1,0 +1,109 @@
+body,
+html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("banner-bg.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-count {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.timer {
+    font-size: 80px;
+    margin: 0 10px;
+}
+
+.countdown-container {
+    color: white;
+    font-weight: bold;
+    margin-top: 220px;
+    font-size: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    padding-left: 50px;
+    box-shadow: 0px 30px 100px 15px black;
+}
+
+.countdown {
+    margin: 0 10px;
+}
+
+.countdown-label {
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.input-container {
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+}
+
+.input-container label {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.input-container input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-container button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: black;
+
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.maskot {
+    transform: rotateY(180deg);
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+.logo-lks {
+    margin-top: -29px;
+    margin-bottom: 50px;
+}
+
+.atas {
+    margin-top: -230px;
+}
