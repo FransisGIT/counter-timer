@@ -1,6 +1,7 @@
 body,
 html {
     height: 100%;
+
 }
 
 .bg {
@@ -14,10 +15,11 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: auto;
 }
 
 .text-count {
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -25,7 +27,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+
 }
 
 .timer {
@@ -36,18 +38,18 @@ html {
 .countdown-container {
     color: white;
     font-weight: bold;
-    margin-top: 220px;
-    font-size: 140px;
+    margin-top: 200px;
+    font-size: 105px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 50px;
-    padding-left: 50px;
+    padding-left: 10px;
     box-shadow: 0px 30px 100px 15px black;
 }
 
 .countdown {
     margin: 0 10px;
+
 }
 
 .countdown-label {
@@ -95,15 +97,77 @@ html {
 
 .maskot {
     transform: rotateY(180deg);
-    margin-top: -40px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
 .logo-lks {
-    margin-top: -29px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
 .atas {
     margin-top: -230px;
+}
+
+
+
+/* Gaya Responsif */
+@media (max-width: 768px) {
+    .countdown-container {
+        margin-top: 120px;
+        font-size: 100px;
+        margin-left: 0;
+        padding-left: 0;
+        margin-left: 500px;
+    }
+
+    .countdown-label {
+        font-size: 25px;
+    }
+
+    .input-container {
+        margin-top: 30px;
+    }
+
+    .input-container label {
+        font-size: 16px;
+    }
+
+    .input-container input[type="number"] {
+        width: 40px;
+        padding: 3px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .countdown-container {
+        margin-top: 80px;
+        font-size: 80px;
+    }
+
+    .countdown-label {
+        font-size: 20px;
+    }
+
+    .input-container {
+        margin-top: 20px;
+    }
+
+    .input-container label {
+        font-size: 14px;
+    }
+
+    .input-container input[type="number"] {
+        width: 30px;
+        padding: 2px;
+        font-size: 12px;
+    }
+
+    .btn-container button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

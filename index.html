@@ -8,9 +8,10 @@
 
   <body>
     <div class="bg">
+      <section>
       <div class="container">
         <div class="row">
-          <div class="col mt-5">
+          <div class="col mt-6">
             <img
               src="static/LOGO_LKS_2023.png"
               alt=""
@@ -18,12 +19,7 @@
               class="float-start logo-lks"
             />
           </div>
-          <div class="col">
-            <h1 class="text-white text-center mt-5 text-count">
-              COUNTDOWN TIMER
-            </h1>
-          </div>
-          <div class="col mt-5">
+          <div class="col mt-6">
             <img
               src="static/MASKOT_LKS_2023.png"
               alt=""
@@ -37,7 +33,7 @@
             <div class="timer" id="timer-display" hidden></div>
           </div>
 
-          <div class="countdown-container">
+          <div class="countdown-container text-center">
             <div class="countdown" id="hours">00</div>
             <div class="countdown-label">Jam</div>
             <div class="countdown" id="minutes">00</div>
@@ -84,91 +80,6 @@
     </div>
 
     <script src="static/js/bootstrap.min.js"></script>
-    <script>
-      var countdown;
-      var timerDisplay = document.getElementById("timer-display");
-      var hoursDisplay = document.getElementById("hours");
-      var minutesDisplay = document.getElementById("minutes");
-      var secondsDisplay = document.getElementById("seconds");
-
-      function startTimer() {
-        var inputHours = document.getElementById("input-hours").value;
-        var inputMinutes = document.getElementById("input-minutes").value;
-        var inputSeconds = document.getElementById("input-seconds").value;
-
-        if (inputHours === "" || inputMinutes === "" || inputSeconds === "") {
-          alert("Mohon masukkan waktu yang valid");
-          return;
-        }
-
-        var totalSeconds =
-          parseInt(inputHours) * 3600 +
-          parseInt(inputMinutes) * 60 +
-          parseInt(inputSeconds);
-
-        if (countdown) {
-          clearInterval(countdown);
-        }
-
-        countdown = setInterval(function () {
-          var hours = Math.floor(totalSeconds / 3600);
-          var minutes = Math.floor((totalSeconds % 3600) / 60);
-          var seconds = totalSeconds % 60;
-
-          hours = hours < 10 ? "0" + hours : hours;
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-
-          timerDisplay.innerHTML = hours + " : " + minutes + " : " + seconds;
-
-          hoursDisplay.innerHTML = hours;
-          minutesDisplay.innerHTML = minutes;
-          secondsDisplay.innerHTML = seconds;
-
-          if (totalSeconds <= 0) {
-            clearInterval(countdown);
-            timerDisplay.innerHTML = "Waktu habis";
-
-            showNotification("Waktu telah habis");
-          } else {
-            totalSeconds--;
-          }
-        }, 1000);
-      }
-
-      function resetTimer() {
-        clearInterval(countdown);
-        timerDisplay.innerHTML = "";
-        document.getElementById("timer-display").value = "0";
-        document.getElementById("input-hours").value = "0";
-        document.getElementById("input-minutes").value = "0";
-        document.getElementById("input-seconds").value = "0";
-
-        hoursDisplay.innerHTML = "00";
-        minutesDisplay.innerHTML = "00";
-        secondsDisplay.innerHTML = "00";
-      }
-
-      function showNotification(message) {
-        if (!("Notification" in window)) {
-          alert("Browser tidak mendukung notifikasi");
-          return;
-        }
-
-        if (Notification.permission === "granted") {
-          var notification = new Notification("Countdown Timer", {
-            body: message,
-          });
-        } else {
-          Notification.requestPermission(function (permission) {
-            if (permission === "granted") {
-              var notification = new Notification("Countdown Timer", {
-                body: message,
-              });
-            }
-          });
-        }
-      }
-    </script>
+    <script src="static/js/timer.js"></script>
   </body>
 </html>
